@@ -6,7 +6,7 @@ import Link from "next/link";
 
   const HidingList= ({ input, options }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const ref = useRef<HTMLDivElement | null>(null);
+    const ref = useRef(null);
 
     const handleClickOutside = (event) => {
         if (ref.current && !ref.current.contains(event.target as Node)) {
