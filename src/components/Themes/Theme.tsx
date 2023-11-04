@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+
+
 const themes = [
   { name: "Theme 2", img: true, background: "/background/2.png" },
   { name: "Theme 3", img: true, background: "/background/3.png" },
@@ -16,7 +18,7 @@ const themes = [
 ];
 
 var themeColor= 'Theme 2';
-export default function(){
+export default function Theme(){
   const ratio_w_h=80;
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState('Theme 1');
@@ -93,4 +95,4 @@ export default function(){
   );
 };
 
-export {themeColor};
+export { themeColor };
