@@ -33,7 +33,7 @@ export default function Theme(){
           <h2 className="font-bold mb-4 text-white">Themes</h2>
           <ul className="flex flex-row flex-wrap gap-3">
             {themes.map((theme, index) => (
-            <li key={index} className="mb-2" onClick={() => selectThemeFunction(theme.name)}>
+            <li key={index} className="mb-2 cursor-pointer" onClick={() => selectThemeFunction(theme.name)}>
                 {theme.img ? (
                   <Image
                     src={theme.background}
