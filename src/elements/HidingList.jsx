@@ -2,24 +2,13 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-interface ListItem {
-  id: number;
-  name: string;
-  svg?: JSX.Element;
-  url: string;
-}
-  
-  interface ChartInfoProps {
-    input: JSX.Element;
-    options?: ListItem[];
-  }
 
 
-  const HidingList: React.FC<ChartInfoProps> = ({ input, options }) => {
+  const HidingList= ({ input, options }) => {
     const [isOpen, setIsOpen] = useState(false);
     const ref = useRef<HTMLDivElement | null>(null);
 
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = (event) => {
         if (ref.current && !ref.current.contains(event.target as Node)) {
             setIsOpen(false);
         }

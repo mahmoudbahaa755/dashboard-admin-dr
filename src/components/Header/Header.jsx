@@ -2,6 +2,10 @@
 import { useContext } from "react";
 import HidingList from '@/elements/HidingList'
 import {NavToggleContext} from '@/hooks/context/NavToggle'
+
+
+
+
 const Header = () => {
   const {  toggleNav } = useContext(NavToggleContext);
   const onToggleMenu = () => {

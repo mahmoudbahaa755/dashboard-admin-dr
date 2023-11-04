@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Header/Header.tsx", "src/hooks/context/NavToggle.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Header/Header.jsx", "src/hooks/context/NavToggle.js", "src/elements/HidingList.jsx"],
   "exclude": ["node_modules"]
 }
