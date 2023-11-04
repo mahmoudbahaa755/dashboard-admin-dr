@@ -1,5 +1,5 @@
 import Icon from "@/elements/Icon";
-
+import Image from "next/image";
 export default function Profile() {
   // const skills = [
   //   {
@@ -31,24 +31,24 @@ export default function Profile() {
   //   {
   //     id: 1,
   //     name: "Facebook",
-  //     src: "/img/facebook.png",
+  //     src: "/Image/facebook.png",
   //     url: "https://www.facebook.com/",
   //   },
   //   {
   //     id: 2,
   //     name: "Twitter",
-  //     src: "/img/twitter.png",
+  //     src: "/Image/twitter.png",
   //     url: "https://twitter.com/",
   //   },
   //   {
   //     id: 3,
   //     name: "Youtube",
-  //     src: "/img/youtube.png",
+  //     src: "/Image/youtube.png",
   //     url: "https://youtube.com/",
   //   },{
   //       id: 4,
   //       name: "LinkedIN",
-  //       src: "/img/linkedin.png",
+  //       src: "/Image/linkedin.png",
   //       url: "https://linkedin.com/",
   //     },
   // ];
@@ -56,12 +56,12 @@ return (
     <div className="w-80 rounded-lg shadow-lg overflow-hidden">
         <div className="px-6 py-4">
             <div className="relative">
-                <img
+                <Image
                     className="w-full rounded-lg"
                     src="https://via.placeholder.com/800x500"
                     alt="Card image cap"
                 />
-                <img
+                <Image
                     className="w-20 h-20 rounded-full absolute left-0 bottom-0 -mb-8 ml-4 border-4 border-white"
                     src="https://via.placeholder.com/800x500"
                     alt="profile-image"
@@ -86,7 +86,7 @@ return (
             {/* {skills.map((skill) => (
                 <div className="mb-4" key={skill.name}>
                     <div className="flex items-center">
-                        <img className="w-8 h-8 mr-4" src={skill.image} alt="skill img" />
+                        <Image className="w-8 h-8 mr-4" src={skill.image} alt="skill Image" />
                         <div className="flex-1">
                             <p className="text-gray-600 font-bold">
                                 {skill.name} <span className="float-right">{skill.percentage}%</span>

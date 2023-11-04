@@ -1,5 +1,5 @@
 'use client'
-
+import Image from 'next/image'; 
 import React, { useState } from 'react';
 import ChartHeader from '@/elements/ChartHeader';
 import ProgressBar from '@/elements/ProgressBar';
@@ -103,7 +103,15 @@ const DashTable = () => {
                 {filteredProducts.map((product, index) => (
                   <tr key={index}>
                     <td>{product.name}</td>
-                    <td><img src={product.img} className="w-16 h-16 mt-1" alt="product img" /></td>
+                    <td>
+  <Image 
+    src={product.img} 
+    alt="product img" 
+    width={64} // w-16
+    height={64} // h-16
+    className="mt-1" 
+  />
+</td>
                     <td>{product.id}</td>
                     <td>{product.amount}</td>
                     <td>{product.date}</td>

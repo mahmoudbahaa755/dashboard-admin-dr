@@ -20,10 +20,10 @@ export default function MyComponents() {
         <div className='flex flex-wrap mt-3 px-4 flex-row gap-10'>
             {modifiedSvgArray.map((icon, index) => (
                 <div className='flex justify-center items-center flex-row gap-4' key={index}>
-                    <Image src={icon.src} width={width} height={height}/> {icon.name}
+                    <Image src={icon.src} width={width} height={height} alt={icon.name}/> {icon.name}
                 </div>
             ))}
         </div>
-        </div>
+    </div>
     );
 }
