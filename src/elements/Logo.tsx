@@ -6,12 +6,13 @@ import logo from "../../public/img/logo-icon.png";
 interface LogoProps {
     width: number;
     height: number;
+    classes: string;
 }
 
-const Logo: React.FC<LogoProps> = ({width=50, height=50 }) => {
+const Logo: React.FC<LogoProps> = ({width=50, height=50 ,classes}) => {
     return (
        
-            <Link href="/">
+            <Link href="/" className={classes || ''}>
                 <Image
                     src={logo}
                     width={width}

@@ -4,7 +4,7 @@ const NavigationItem = ({ item }) => {
     const { svg, label, href, badge } = item;
   
     return (
-      <li activeclassname="border-l-2border-green" className=" hover:border-l-2  border-gray pl-4">
+      <li className=" hover:border-l-2  border-gray pl-4">
         <Link  className="text-white flex gap-4 py-2 justify-start" href={href}>
           {svg}
           <span>{label}</span>

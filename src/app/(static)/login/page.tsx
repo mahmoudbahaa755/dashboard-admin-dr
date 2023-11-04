@@ -27,9 +27,9 @@ const LoginPage = () => (
     <div className='bg-bg1 z-2 absolute w-screen h-screen top-0 left-0 absolute flex items-center justify-center'>
     <div className="w-full max-w-xs">
             <div className="w-full max-w-xs">
-                <div className="shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                    <div className="text-center">
-                        <Logo width={70} height={70} />
+                <div className="shadow-lg rounded-lg flex flex-col space-y-4 justify-center  px-8 py-6 mb-4">
+                    <div className="">
+                        <Logo width={70} classes='flex  justify-center '  height={70} />
                     </div>
                     <div className="text-gray-800 text-xl text-center mb-4 font-bold">
                         Sign In
