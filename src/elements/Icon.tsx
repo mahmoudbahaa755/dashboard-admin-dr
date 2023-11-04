@@ -12,21 +12,19 @@ interface IconProps {
 
 const Icon: React.FC<IconProps> = ({
   name,
-  src,
-  href,
+  src = "/default.png", // provide a default image
+  href = "/", // provide a default link
   className,
   width = 25,
   height = 25,
 }) => {
-  const icon = <img src={src} alt={name} width={width} height={height} />;
+  const icon = <Image src={src} alt={name} width={width} height={height} />;
 
- 
-    return (
-      <Link href={href} className={` cursor-pointer ${className}`}>
-        {icon}
-      </Link>
-    );
-  
+  return (
+    <Link href={href} className={`cursor-pointer ${className}`}>
+    {icon}
+    </Link>
+  );
 };
 
 export default Icon;
