@@ -59,7 +59,7 @@ export default function HoverTable({
                             <thead>
                                 <tr>
                                     {tableCol.map((col) => (
-                                        <th key={col.id} className={`text-xs px-10 ${Border}`} scope="col">
+                                        <th key={col.id} className={`text-xs ${Border}`}>
                                             {col.col}
                                         </th>
                                     ))}

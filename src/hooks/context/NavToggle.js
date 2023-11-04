@@ -5,7 +5,7 @@ import React, { createContext, useState } from 'react';
 export const NavToggleContext = createContext();
 
 const NavToggleProvider = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   // Function to toggle the navigation
   const toggleNav = () => {

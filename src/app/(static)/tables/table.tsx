@@ -48,35 +48,30 @@ export default function Table() {
     ]
 
     return (
-        <div className="mt-4 shadow-2xl w-fit">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="shadow-lg">
-                     
-                            <h5 className="text-lg font-bold mb-4">Bordered Table</h5>
-                                <table className='table'>
-                                <thead>
-                                <tr>
-                                    {tableCol.map((c)=>(
-
-                                          <th key={c.id} scope="col">{c.col}</th>
-
-                                    ))}
-                                 
+        <div>
+            <div>
+                <div>
+                    <h5>Bordered Table</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                {tableCol.map((c)=>(
+                                    <th key={c.id} scope="col">{c.col}</th>
+                                ))}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {data.map((person) => (
+                                <tr key={person.id}>
+                                    <td>{person.id}</td>
+                                    <td>{person.firstName}</td>
+                                    <td>{person.lastName}</td>
+                                    <td>{person.handle}</td>
                                 </tr>
-                            </thead>
-                                    <tbody>
-                                        {data.map((person) => (
-                                            <tr className="border-1" key={person.id}>
-                                                <td className="px-6 py-4 whitespace-nowrap">{person.id}</td>
-                                                <td className="px-6 py-4 whitespace-nowrap">{person.firstName}</td>
-                                                <td className="px-6 py-4 whitespace-nowrap">{person.lastName}</td>
-                                                <td className="px-6 py-4 whitespace-nowrap">{person.handle}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                        
-                    </div>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );
