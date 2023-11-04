@@ -1,6 +1,6 @@
 'use client'
 import { useContext } from "react";
-import HiddingList from '@/elements/HiddingList'
+import HidingList from '@/elements/HiddingList'
 import {NavToggleContext} from '@/hooks/context/NavToggle'
 const Header = () => {
   const {  toggleNav } = useContext(NavToggleContext);
@@ -86,7 +86,7 @@ const Header = () => {
       <div className="flex gap-3 flex-row mt-2 sm:mt-0">
 
       {data.map((item) => (
-        <HiddingList key={item.id} input={item.svg} options={item.innerlist}/>
+        <HidingList key={item.id} input={item.svg} options={item.innerlist}/>
       ))}
        
        <div>
