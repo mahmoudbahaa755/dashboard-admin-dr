@@ -9,7 +9,7 @@ import Link from "next/link";
     const ref = useRef(null);
 
     const handleClickOutside = (event) => {
-        if (ref.current && !ref.current.contains(event.target as Node)) {
+        if (ref.current && !ref.current.contains(event.target)) {
             setIsOpen(false);
         }
     };
