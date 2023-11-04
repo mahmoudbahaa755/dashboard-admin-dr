@@ -1,7 +1,10 @@
 import React from "react";
 import Link from 'next/link'
 import Logo from "@/elements/Logo";
+import loginUser from './loginUser'
 const LoginPage = () => {
+    const x =loginUser( "admin@admin.com",'admin')
+    console.log(x)
     return (
 
         <div className="flex flex-col items-center justify-center h-screen">
