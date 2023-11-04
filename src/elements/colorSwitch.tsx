@@ -8,7 +8,6 @@ export default function colorSwitch(){
         <div className="right-sidebar-content">
     
           <p className="mb-0">Gaussion Texture</p>
-          <hr>
           
           <ul className="switcher">
             <li id="theme1"></li>
