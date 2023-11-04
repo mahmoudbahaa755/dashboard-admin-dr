@@ -1,8 +1,17 @@
-import React from 'react';
+
 import Link from 'next/link';
 import Logo from "@/elements/Logo";
 
-const Button = ({ type, className, children, ariaLabel }) => (
+import React, { ReactNode } from 'react';
+
+interface ButtonProps {
+    type: 'button' | 'submit' | 'reset';
+    className?: string;
+    children: ReactNode;
+    ariaLabel?: string;
+}
+
+const Button: React.FC<ButtonProps> = ({ type, className, children, ariaLabel }) => (
     <button
         type={type}
         className={`font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${className}`}
@@ -12,7 +21,13 @@ const Button = ({ type, className, children, ariaLabel }) => (
     </button>
 );
 
-const InputField = ({ type, id, placeholder }) => (
+interface InputFieldProps {
+    type: 'text' | 'password' | 'email' | 'number';
+    id: string;
+    placeholder?: string;
+}
+
+const InputField: React.FC<InputFieldProps> = ({ type, id, placeholder }) => (
     <div className="relative">
         <input
             type={type}
@@ -22,7 +37,6 @@ const InputField = ({ type, id, placeholder }) => (
         />
     </div>
 );
-
 const LoginPage = () => (
     <div className='bg-bg1 z-2 absolute w-screen h-screen top-0 left-0 absolute flex items-center justify-center'>
     <div className="w-full max-w-xs">

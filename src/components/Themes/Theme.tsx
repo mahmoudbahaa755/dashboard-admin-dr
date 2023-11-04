@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { is } from './../../../.next/static/chunks/fallback/amp';
 
 
 const themes = [
@@ -20,7 +21,7 @@ const themes = [
 var themeColor= 'Theme 2';
 export default function Theme(){
   const ratio_w_h=80;
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [selectedTheme, setSelectedTheme] = useState('Theme 1');
   const selectThemeFunction=(theme :string)=>{
     setSelectedTheme(theme);
@@ -29,12 +30,13 @@ export default function Theme(){
   return (
     <div className="p-4">
       {isSidebarOpen && (
-        <div className="bg-gray-800 w-48 p-2 absolute right-0 top-0 h-screen shadow-lg">
+        <div 
+        style={isSidebarOpen ? {display: 'block'} : {display: 'none'}}
+        className="bg-gray-800 w-48 p-2 absolute right-0 top-0 h-screen shadow-lg">
           <h2 className="font-bold mb-4 text-white">Themes</h2>
           <ul className="flex flex-row flex-wrap gap-3">
             {themes.map((theme, index) => (
-            <li key={index} className="mb-2 cursor-pointer" onClick={() => selectThemeFunction(theme.name)}>
-                {theme.img ? (
+            <li key={index} className="mb-2 cursor-pointer" onClick={(e) => { e.stopPropagation(); selectThemeFunction(theme.name); }}>         {theme.img ? (
                   <Image
                     src={theme.background}
                     alt={theme.name}

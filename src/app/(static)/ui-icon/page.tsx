@@ -1,13 +1,13 @@
 
-import MyComponents from "./MyComponents"
-import MyIcons from './MyIcons'
-import MyElements from './MyElements'
+// import MyComponents from "./MyComponents"
+// import MyIcons from './MyIcons'
+// import MyElements from './MyElements'
 export default function uiIcon(){
     return(
         <div >
-            <MyIcons/>
+            {/* <MyIcons/>
             <MyElements />
-            <MyComponents />
+            <MyComponents /> */}
             </div>
     )
 }

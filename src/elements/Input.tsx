@@ -9,13 +9,13 @@ interface InputProps {
 }
 
 export default function Input({
-    htmlFor,
-    type,
-    placeholder,
-    id,
-    label,
-    classes,
-    mainClass
+  htmlFor = '',
+  type = 'text',
+  placeholder = '',
+  id = '',
+  label = '',
+  classes = '',
+  mainClass = ''
 }: InputProps) {
     return (
       <div className={mainClass || ''}>

@@ -8,6 +8,16 @@ interface HoverTableProps {
     cols?:any;
     smallTable?: boolean;
   }
+  interface TableRow {
+    id: string;
+    firstName: string;
+    lastName: string;
+    handle: string;
+  }
+  interface TableCol {
+    id: string;
+    col: string;
+  }
 export default function HoverTable({
     title,
     rows,
@@ -58,7 +68,7 @@ export default function HoverTable({
                         <table className={`table-auto w-full sm:table-fixed ${Striped}`}>
                             <thead>
                                 <tr>
-                                    {tableCol.map((col) => (
+                                    {tableCol.map((col: TableCol) => (
                                         <th key={col.id} className={`text-xs ${Border}`}>
                                             {col.col}
                                         </th>
@@ -66,7 +76,7 @@ export default function HoverTable({
                                 </tr>
                             </thead>
                             <tbody className={Border}>
-                                {tableData.map((row) => (
+                                {tableData.map((row: TableRow) => (
                                     <tr key={row.id} className={hoverStyling}>
                                         <td className={`px-10 ${Border} border-gray border-t py-2`}>{row.id}</td>
                                         <td className={`px-10 ${Border} border-gray border-t py-2`}>{row.firstName}</td>

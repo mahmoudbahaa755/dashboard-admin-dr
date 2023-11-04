@@ -10,9 +10,9 @@ const fields = [
   { label: 'Address', type: 'text', placeholder: 'Street' },
   { label: 'City', type: 'text', placeholder: 'City' },
   { label: 'State', type: 'text', placeholder: 'State' },
-  { label: 'Username', type: 'text', value: 'jhonsanmark' },
-  { label: 'Password', type: 'password', value: '11111122333' },
-  { label: 'Confirm password', type: 'password', value: '11111122333' },
+  { label: 'Username', type: 'text', value: 'jhonsanmark', },
+  { label: 'Password', type: 'password', value: '11111122333', },
+  { label: 'Confirm password', type: 'password', value: '11111122333', },
 ]
 
 export default function EditProfile(){
@@ -23,7 +23,8 @@ export default function EditProfile(){
 
                 {fields.map((field, index) => (
                     <div key={index} className="mb-2">
-                        <Input mainClass='flex flex-row gap-3' type={field.type} label={field.label} value={field.value} placeholder={field.placeholder} />
+                        <Input mainClass='flex flex-row gap-3' type={field.type} label={field.label}
+                        placeholder={field.placeholder ? field.placeholder : ''} htmlFor={''} id={''} />
                     </div>
                 ))}
                 </div>

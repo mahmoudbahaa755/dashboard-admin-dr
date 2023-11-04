@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export  default async function loginUser(username, password) {
+export  default async function loginUser(username:string, password:string) {
   try {
     const response = await axios.post('https://endo-api.eductor.org/auth/login/dashboard', {
       username: username,

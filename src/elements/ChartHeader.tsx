@@ -3,6 +3,7 @@ import ChartInfo from './HiddingList'; // adjust the path according to your proj
 
 interface WeeklySalesHeaderProps {
     title: string;
+    input: string;
 }
 
 const ChartHeader: React.FC<WeeklySalesHeaderProps> = ({title,input}) => {

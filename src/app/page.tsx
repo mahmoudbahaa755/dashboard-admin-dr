@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import PieChart from './mainComponents/PieChart'
+// import PieChart from './mainComponents/PieChart'
 import SiteData from './mainComponents/SiteData'
-import LineChart from './mainComponents/LineChart'
+// import LineChart from './mainComponents/LineChart'
 import DashTable from './mainComponents/DashTable'
 
 export default function Home() {

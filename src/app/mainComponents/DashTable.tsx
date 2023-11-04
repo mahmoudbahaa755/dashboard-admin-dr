@@ -67,10 +67,9 @@ const headers = ['Product', 'Photo', 'Product ID', 'Amount', 'Date', 'Shipping']
 
 const DashTable = () => {
   const [searchTerm, setSearchTerm] = useState('');
-
-  const handleSearch = event => {
-    setSearchTerm(event.target.value);
-  };
+const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+  setSearchTerm(event.target.value);
+};
 
   const filteredProducts = products.filter(product =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
