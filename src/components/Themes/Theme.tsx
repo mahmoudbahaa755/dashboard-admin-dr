@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { is } from './../../../.next/static/chunks/fallback/amp';
+
 
 
 const themes = [

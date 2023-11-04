@@ -1,5 +1,5 @@
 import React from 'react';
-import ChartInfo from './HiddingList'; // adjust the path according to your project structure
+import ChartInfo from './HidingList'; // adjust the path according to your project structure
 
 interface WeeklySalesHeaderProps {
     title: string;

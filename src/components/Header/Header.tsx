@@ -1,6 +1,6 @@
 'use client'
 import { useContext } from "react";
-import HidingList from '@/elements/HiddingList'
+import HidingList from '@/elements/HidingList'
 import {NavToggleContext} from '@/hooks/context/NavToggle'
 const Header = () => {
   const {  toggleNav } = useContext(NavToggleContext);
@@ -25,7 +25,7 @@ const Header = () => {
       },
       {
         id: 2,
-        name: 'Frensh',
+        name: 'French',
         svg: (
           <svg width='18' viewBox="0 -4 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_1310_8031)"> <path d="M27.999 0H-0.000976562V20H27.999V0Z" fill="url(#paint0_linear_1310_8031)"></path> <path d="M27.999 0H13.3324V20H27.999V0Z" fill="url(#paint1_linear_1310_8031)"></path> <path d="M9.33236 0H-0.000976562V20H9.33236V0Z" fill="url(#paint2_linear_1310_8031)"></path> <path d="M18.6657 0H9.33237V20H18.6657V0Z" fill="url(#paint3_linear_1310_8031)"></path> </g> <defs> <linearGradient id="paint0_linear_1310_8031" x1="13.999" y1="0" x2="13.999" y2="20" gradientUnits="userSpaceOnUse"> <stop stop-color="white"></stop> <stop offset="1" stop-color="#F0F0F0"></stop> </linearGradient> <linearGradient id="paint1_linear_1310_8031" x1="20.6657" y1="0" x2="20.6657" y2="20" gradientUnits="userSpaceOnUse"> <stop stop-color="#F44653"></stop> <stop offset="1" stop-color="#EE2A39"></stop> </linearGradient> <linearGradient id="paint2_linear_1310_8031" x1="4.66569" y1="0" x2="4.66569" y2="20" gradientUnits="userSpaceOnUse"> <stop stop-color="#1035BB"></stop> <stop offset="1" stop-color="#042396"></stop> </linearGradient> <linearGradient id="paint3_linear_1310_8031" x1="13.999" y1="0" x2="13.999" y2="20" gradientUnits="userSpaceOnUse"> <stop stop-color="white"></stop> <stop offset="1" stop-color="#F0F0F0"></stop> </linearGradient> <clipPath id="clip0_1310_8031"> <rect width="28" height="20" rx="2" fill="white"></rect> </clipPath> </defs> </g></svg>
         ),
@@ -86,6 +86,7 @@ const Header = () => {
       <div className="flex gap-3 flex-row mt-2 sm:mt-0">
 
       {data.map((item) => (
+        item.svg && item.innerlist && item.innerlist.every(option => option.svg) && 
         <HidingList key={item.id} input={item.svg} options={item.innerlist}/>
       ))}
        

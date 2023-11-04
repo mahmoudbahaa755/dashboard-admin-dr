@@ -3,11 +3,11 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 interface ListItem {
-    id: number;
-    name: string;
-    svg: JSX.Element;
-    url: string;
-  }
+  id: number;
+  name: string;
+  svg?: JSX.Element;
+  url: string;
+}
   
   interface ChartInfoProps {
     input: JSX.Element;
