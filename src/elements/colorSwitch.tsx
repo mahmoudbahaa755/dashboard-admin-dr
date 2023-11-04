@@ -20,7 +20,6 @@ export default function colorSwitch(){
           </ul>
     
           <p className="mb-0">Gradient Background</p>
-          <hr>
           
           <ul className="switcher">
             <li id="theme7"></li>
