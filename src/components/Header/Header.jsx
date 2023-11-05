@@ -90,7 +90,7 @@ const Header = () => {
       <div className="flex gap-3 flex-row mt-2 sm:mt-0">
 
       {data.map((item) => (
-        item.svg && item.innerlist && item.innerlist.every(option => option.svg) && 
+
         <HidingList key={item.id} input={item.svg} options={item.innerlist}/>
       ))}
        

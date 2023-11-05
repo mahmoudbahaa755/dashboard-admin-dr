@@ -57,15 +57,15 @@ export default function Profile() {
     <div className="w-80 rounded-lg shadow-lg overflow-hidden">
       <div className="px-6 py-4">
         <div className="relative">
-          <Image
+          <img
             className="w-full rounded-lg"
             src="https://via.placeholder.com/800x500"
-            alt="Card image cap"
+            alt="Card image cap"  
           />
-          <Image
+          <img
             className="w-20 h-20 rounded-full absolute left-0 bottom-0 -mb-8 ml-4 border-4 border-white"
             src="https://via.placeholder.com/800x500"
-            alt="profile-image"
+            alt="profile-image" 
           />
         </div>
       </div>

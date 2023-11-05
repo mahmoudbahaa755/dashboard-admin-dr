@@ -21,7 +21,7 @@ const themes = [
 var themeColor= 'Theme 2';
 export default function Theme(){
   const ratio_w_h=80;
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState('Theme 1');
   const selectThemeFunction=(theme :string)=>{
     setSelectedTheme(theme);
