@@ -28,7 +28,7 @@ export default function Theme(){
   }
   themeColor= selectedTheme;
   return (
-    <div className="p-4">
+    <div className="">
       {isSidebarOpen && (
         <div 
         style={isSidebarOpen ? {display: 'block'} : {display: 'none'}}

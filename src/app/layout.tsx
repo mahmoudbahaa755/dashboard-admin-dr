@@ -21,6 +21,7 @@ export default function RootLayout({ children,
   return (
     <html lang="en">
       <body className={`${inter.className} text-white bg-fixed bg-bg2 pt-2 rounded-md`}>
+        <div className='flex flex-col justify-between h-screen'>
         <div className='flex flex-row gap-6 '>
         <NavToggleProvider>
           <div>            
@@ -35,8 +36,9 @@ export default function RootLayout({ children,
           </div>
           </NavToggleProvider>
           </div>
-             <Theme />
              <Footer />
+             </div>
+             <Theme />
         </body>
     </html>
   )
