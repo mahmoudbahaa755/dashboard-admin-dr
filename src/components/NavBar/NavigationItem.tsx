@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const NavigationItem = ({ item }) => {
+const NavigationItem = ({ item }:any) => {
     const { svg, label, href, badge } = item;
   
     return (
