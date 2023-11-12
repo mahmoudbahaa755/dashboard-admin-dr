@@ -24,7 +24,7 @@ export default function Theme(){
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState('Theme 1');
 
-  const selectThemeFunction = (theme: string | { type: string, background: string }) => {
+  const selectThemeFunction = (theme: any) => {
     console.log(theme);
     document.body.style.background = theme.background;
     setSelectedTheme(theme);
