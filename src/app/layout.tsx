@@ -14,37 +14,38 @@ export const metadata: Metadata = {
 // import { ReduxProvider } from '@/Redux/provider'
 
 export default function RootLayout({ children,
-}: {children: React.ReactNode
-} ,includeNavbar: boolean =true) {
+}: {
+  children: React.ReactNode
+}, includeNavbar: boolean = true) {
 
   // const theme = window.localStorage.getItem('theme');
-  
+
   return (
     <html lang="en">
       <body className={`text-white bg-fixed bg-bg2 pt-2 rounded-md`}>
-       {/* <ReduxProvider> */}
+        {/* <ReduxProvider> */}
 
         <div className='flex flex-col justify-between h-screen'>
-        <div className='flex flex-row gap-6 '>
-        <NavToggleProvider>
-          <div>            
-     {includeNavbar &&<Navbar />}
-          </div>
-          <div className='w-screen'>
-           {includeNavbar && <Header />}
-    <div className='mt-8'>
+          <div className='flex flex-row gap-6 '>
+            <NavToggleProvider>
+              <div>
+                {includeNavbar && <Navbar />}
+              </div>
+              <div className='w-screen'>
+                {includeNavbar && <Header />}
+                <div className='mt-8'>
 
-        {children}
+                  {children}
+                </div>
+              </div>
+            </NavToggleProvider>
           </div>
-          </div>
-          </NavToggleProvider>
-          </div>
-             <Footer />
-             </div>
-             <Theme />
-       {/* </ReduxProvider> */}
+          <Footer />
+        </div>
+        <Theme />
+        {/* </ReduxProvider> */}
 
-        </body>
+      </body>
     </html>
   )
 }
