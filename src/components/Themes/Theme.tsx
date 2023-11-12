@@ -54,7 +54,7 @@ export default function Theme(){
             {themes.map((theme, index) => (
             <li key={index} className="mb-2 cursor-pointer" onClick={(e) => { e.stopPropagation(); selectThemeFunction(theme); }}>         {theme.img ? (
                   <Image
-                    src={theme.src}
+                    src={theme.src || '/background/1.png'}
                     alt={theme.name}
                     width={ratio_w_h}
                     height={ratio_w_h}
