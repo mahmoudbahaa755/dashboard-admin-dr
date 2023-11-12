@@ -99,7 +99,7 @@ const BlogsTable = () => {
 
 
   return (
-    <div className="">
+    <div className="bg-inner rounded mt-5">
       <div className="w-full lg:w-full">
         <div className="shadow  flex flex-col rounded-lg p-6">
           <ChartHeader input='...' title='Recent Order Tables'/>

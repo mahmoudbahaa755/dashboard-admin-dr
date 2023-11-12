@@ -11,13 +11,13 @@ export default function Navbar() {
   const memoizedLabelItems = useMemo(() => labelItems, []);
 
   return (
-    <div className='sm:bg-black'>
-    <div className={`w-52 bg-black sm:bg-black relative`} style={{ display: isOpen ? 'block' : 'none' }}>
-      <div className="flex flex-row align-center sm:bg-black border-b mb-3 border-gray-600 gap-2 justify-center self-center">
+    <div className=' bg-inner'>
+    <div className={`w-52   relative`} style={{ display: isOpen ? 'block' : 'none' }}>
+      <div className="flex flex-row align-center  border-b mb-3 border-gray-600 gap-2 justify-center self-center">
         <Logo width={50} classes="" height={50}/>
         <span>Endo Hub Admin</span>
       </div>
-      <div className="flex fixed ">
+      <div className="flex  fixed ">
         <ul className="overflow-y-auto">
           <li className="text-gray-500 uppercase text-xs font-bold tracking-wider p-2">
             MAIN NAVIGATION

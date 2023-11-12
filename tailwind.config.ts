@@ -23,6 +23,7 @@ export default {
     },
     extend: {
       colors:{
+        'inner': 'rgba(0,0,0,0.2)',
         accent:{
           1:'hsl(var(--color-accent-1) / <alpha-value></alpha-value>)',
           2:'hsl(var(--color-accent-2) / <alpha-value></alpha-value>)'

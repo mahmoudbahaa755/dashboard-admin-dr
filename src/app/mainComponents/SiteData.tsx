@@ -10,7 +10,7 @@ const SiteData = () => {
     ];
     
     return(
-        <div className="">
+        <div className="bg-inner p-3">
             <div>
                 <div className="flex flex-wrap m-0">
                     {data.map((item, index) => (

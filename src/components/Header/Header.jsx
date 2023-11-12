@@ -66,7 +66,7 @@ const Header = () => {
     }
   ]
   return (
-    <div className='flex flex-row  justify-between pr-4 px-2'>
+    <div className='flex   flex-row  justify-between pr-4 px-2'>
       <div className="flex flex-row gap-3">
         <div className= "cursor-pointer mt-1 " onClick={onToggleMenu}>
         ☰

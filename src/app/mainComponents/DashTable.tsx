@@ -74,7 +74,7 @@ const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
   );
 
   return (
-    <div className="">
+    <div className=" bg-inner mt-5">
       <div className="w-full lg:w-full">
         <div className="shadow rounded-lg p-6">
           <ChartHeader input='...' title='Recent Order Tables'/>

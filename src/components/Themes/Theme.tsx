@@ -11,11 +11,16 @@ const themes = [
   { type: 'gradient', name: "Theme 1", img: true, src: '/background/1.png', background: "url(/background/1.png)" },
   { type: 'gradient', name: "Theme 5", img: true, src: '/background/5.png', background: "url(/background/5.png)" },
   { type: 'gradient', name: "Theme 6", img: true, src: '/background/6.png', background: "url(/background/6.png)" },
-  { type: 'color', name: "Theme 3", img: false, background: "blue" },
-  { type: 'color', name: "Theme 4", img: false, background: "green" },
-  { type: 'color', name: "Theme 5", img: false, background: "red" },
-  { type: 'color', name: "Theme 7", img: false, background: "gray" },
-  { type: 'color', name: "Theme 8", img: false, background: "cyan" },
+  { type: 'color', name: "Theme 3", img: false, background: "linear-gradient(567deg, rgba(165, 42, 4, 0.89), rgba(113, 102, 8, 0.89), rgba(13, 95, 16, 0.93), rgba(4, 79, 88, 0.94), rgba(19, 56, 86, 0.9), rgba(24, 32, 78, 0.94), rgba(100, 8, 115, 0.95))" },
+  { type: 'color', name: "Theme 4", img: false, background: "linear-gradient(180deg, #08a50e, #69bb03)" },
+  { type: 'color', name: "Theme 5", img: false, background: "linear-gradient(45deg, #795548, #945c48)" },
+  { type: 'color', name: "Theme 7", img: false, background: "linear-gradient(45deg, #29323c, #485563)" },
+  { type: 'color', name: "Theme 7", img: false, background: "linear-gradient(45deg, #1565C0, #1E88E5)" },
+  { type: 'color', name: "Theme 7", img: false, background: "linear-gradient(45deg, #65379b, #886aea)" },
+  { type: 'color', name: "Theme 7", img: false, background: "linear-gradient(180deg, #ff5447, #f1076f)" },
+  // { type: 'color', name: "Theme 7", img: false, background: "" },
+  // { type: 'color', name: "Theme 7", img: false, background: "" },
+  { type: 'color', name: "Theme 8", img: false, background: "#09867B" },
 ];
 
 var themeColor = 'Theme 2';
@@ -69,7 +74,7 @@ export default function Theme() {
               ) : (
                 <div
                   style={{
-                    backgroundColor: theme.background,
+                    background: theme.background,
                     width: `${ratio_w_h}px`,
                     height: `${ratio_w_h}px`,
                     borderRadius: "15px",
