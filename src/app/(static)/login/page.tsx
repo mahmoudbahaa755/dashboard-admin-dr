@@ -1,9 +1,10 @@
+'use client'
 
-import Link from 'next/link';
 import Logo from "@/elements/Logo";
-
+import LoginAPI from './loginUser';
 import React, { ReactNode } from 'react';
-
+import { useDispatch } from 'react-redux';
+import { logIn,logOut } from '@/Redux/slices/auth-slice';
 interface ButtonProps {
     type: 'button' | 'submit' | 'reset';
     className?: string;
@@ -21,6 +22,7 @@ const Button: React.FC<ButtonProps> = ({ type, className, children, ariaLabel })
     </button>
 );
 
+    
 interface InputFieldProps {
     type: 'text' | 'password' | 'email' | 'number';
     id: string;
@@ -37,7 +39,12 @@ const InputField: React.FC<InputFieldProps> = ({ type, id, placeholder }) => (
         />
     </div>
 );
-const LoginPage = () => (
+function LoginPage (){
+    const handleSignIn = () => {
+        const x= LoginAPI('admin@admin.com', 'admin'); // replace with the actual credentials
+        console.log(x);
+     };
+return (
     <div className='bg-bg1 z-2 absolute w-screen h-screen top-0 left-0 absolute flex items-center justify-center'>
     <div className="w-full max-w-xs">
             <div className="w-full max-w-xs">
@@ -50,45 +57,26 @@ const LoginPage = () => (
                     </div>
                     <form>
                         <div className="mb-4">
-                            <label htmlFor="username" className="block text-gray-700 font-bold mb-2">Username</label>
+                            <label htmlFor="username" className="block text-gray-700 font-bold mb-2">Email</label>
                             <InputField type="text" id="username" placeholder="Enter Username" />
                         </div>
                         <div className="mb-6">
                             <label htmlFor="password" className="block text-gray-700 font-bold mb-2">Password</label>
                             <InputField type="password" id="password" placeholder="Enter Password" />
                         </div>
-                        <div className="mb-6">
-                            <div className="flex items-center">
-                                <input type="checkbox" id="remember-me" className="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" />
-                                <label htmlFor="remember-me" className="ml-2 block text-gray-700 font-bold">Remember me</label>
-                            </div>
-                            <div className="text-right">
-                                <a href="reset-password.html" className="text-sm font-bold text-gray-700 hover:text-gray-900">Forgot Password?</a>
-                            </div>
+                    
+                        <div className="mb-6 flex justify-center">
+                            <Button type="submit" onClick={handleSignIn} className="bg-blue-500 hover:bg-blue-700 text-white">Sign In</Button>
                         </div>
-                        <div className="mb-6">
-                            <Button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white">Sign In</Button>
-                        </div>
-                        <div className="text-center mb-4">
-                            <span className="text-gray-700 font-bold">Or Sign In With</span>
-                        </div>
-                        <div className="flex justify-center">
-                            <div className="mr-2">
-                                <Button type="submit" className="bg-blue-700 hover:bg-blue-800 text-white" ariaLabel="Sign in with Facebook">Facebook</Button>
-                            </div>
-                            <div className="ml-2">
-                                <Button type="submit" className="bg-blue-400 hover:bg-blue-500 text-white" ariaLabel="Sign in with Twitter">Twitter</Button>
-                            </div>
-                        </div>
+                   
+                       
                     </form>
                 </div>
-                <p className="text-center text-gray-500 text-xs">
-                    Do not have an account?{" "}
-                    <Link href="/register" className="text-blue-500 hover:text-blue-700 font-bold">Sign Up here</Link>
-                </p>
+              
             </div>
         </div>
     </div>
 );
+ }
 
 export default LoginPage;

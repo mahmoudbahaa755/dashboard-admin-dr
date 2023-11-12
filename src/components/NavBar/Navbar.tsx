@@ -1,6 +1,5 @@
 'use client'
 import { useContext, useMemo } from "react";
-import Link from "next/link";
 import Logo from "@/elements/Logo";
 import { NavToggleContext } from '@/hooks/context/NavToggle';
 import { menuItems, labelItems } from './data';
@@ -12,8 +11,9 @@ export default function Navbar() {
   const memoizedLabelItems = useMemo(() => labelItems, []);
 
   return (
-    <div className={`w-52 sm-max:bg-black relative`} style={{ display: isOpen ? 'block' : 'none' }}>
-      <div className="flex flex-row align-center border-b mb-3 border-gray-600 mb-3 gap-2 justify-center self-center">
+    <div className='sm:bg-black'>
+    <div className={`w-52 bg-black sm:bg-black relative`} style={{ display: isOpen ? 'block' : 'none' }}>
+      <div className="flex flex-row align-center sm:bg-black border-b mb-3 border-gray-600 mb-3 gap-2 justify-center self-center">
         <Logo width={50} classes="" height={50}/>
         <span>Dashtreme Admin</span>
       </div>
@@ -33,6 +33,7 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
+    </div>
     </div>
   );
 }

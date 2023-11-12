@@ -3,8 +3,20 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import ChartHeader from '@/elements/ChartHeader';
 import ProgressBar from '@/elements/ProgressBar';
+import AddData from '@/elements/AddData'
 
-const products = [
+// ...your products array...
+interface Product {
+  id: number;
+  name: string;
+  img: string;
+  productId: string;
+  amount: string;
+  date: string;
+  shipping: number;
+}
+
+const initialProducts = [
   {
     id: 1,
     name: 'Iphone 5',
@@ -61,31 +73,44 @@ const products = [
   },
 ];
 
-const headers = ['Product', 'Photo', 'Product ID', 'Amount', 'Date', 'Shipping'];
+const headers = ['Product', 'Photo', 'Product ID', 'Amount', 'Date', 'Shipping','edit','delete'];
 
-const DashTable = () => {
+const BlogsTable = () => {
   const [searchTerm, setSearchTerm] = useState('');
-const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-  setSearchTerm(event.target.value);
-};
+  const [products, setProducts] = useState(initialProducts);
+
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleEdit = (product: Product) => {
+    // Handle edit
+  };
+
+  const handleDelete = (id: number) => {
+    if (window.confirm('Are you sure you want to delete this item?')) {
+      setProducts(products.filter(product => product.id !== id));
+    }
+  };
 
   const filteredProducts = products.filter(product =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+
   return (
     <div className="">
       <div className="w-full lg:w-full">
-        <div className="shadow rounded-lg p-6">
+        <div className="shadow  flex flex-col rounded-lg p-6">
           <ChartHeader input='...' title='Recent Order Tables'/>
           <input
-            type="text"
-            placeholder="Search..."
-            value={searchTerm}
-            onChange={handleSearch}
-            className="p-2 text-base border-gray-300 float-right w-1/3 text-black bg-gray-100"
-          />
-          <div className="mt-6">
+  type="text"
+  placeholder="Search..."
+  value={searchTerm}
+  onChange={handleSearch}
+  className="p-2 text-base border-gray-300 float-right lg:w-1/2 text-black bg-gray-100"
+/>
+          <div className="mt-6 overflow-x-auto">
             <table className="w-full whitespace-nowrap">
               <thead>
                 <tr className="text-l font-semibold tracking-wide text-left text-white uppercase border-b ">
@@ -101,22 +126,32 @@ const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
                   <tr key={index}>
                     <td>{product.name}</td>
                     <td>
-  <Image 
-    src={product.img} 
-    alt="product img" 
-    width={64} // w-16
-    height={64} // h-16
-    className="mt-1" 
-  />
-</td>
-                    <td>{product.id}</td>
+                      <Image
+                        src={product.img}
+                        alt={product.name}
+                        width={64} // w-16
+                        height={64} // h-16
+                        className="mt-1" 
+                      />
+                    </td>
+                    <td>{product.productId}</td>
                     <td>{product.amount}</td>
                     <td>{product.date}</td>
-                    <td>
-                      <ProgressBar completed={product.shipping} />
-                    </td>
-                  </tr>
-                ))}
+                  <td>
+        <ProgressBar completed={product.shipping} />
+      </td>
+      <td>
+        <button onClick={() => handleEdit(product)}>            <AddData />
+</button>
+      </td>
+      <td  className='flex justify-center pt-5 items-cneter'>
+         <button onClick={() => handleDelete(product.id)}>
+         <Image src='/svg/delete.svg' width={35} height={35} alt='delete icon' />
+
+         </button>
+      </td>
+    </tr>
+  ))}
               </tbody>
             </table>
           </div>
@@ -126,4 +161,4 @@ const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
   );
 };
 
-export default DashTable;
+export default BlogsTable;

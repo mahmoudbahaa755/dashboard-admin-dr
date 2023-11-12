@@ -58,8 +58,8 @@ export const menuItems: MenuItem[] = [
     ),
   },
   {
-    href: "/form",
-    label: "Forms",
+    href: "/blogs",
+    label: "Blogs",
     svg: (
       <svg
         width="20px"
@@ -82,7 +82,7 @@ export const menuItems: MenuItem[] = [
         </g>
       </svg>
     ),
-  },
+  } ,
   {
     href: "/tables",
     label: "Tables",

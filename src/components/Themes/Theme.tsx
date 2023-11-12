@@ -5,17 +5,17 @@ import Image from "next/image";
 
 
 const themes = [
-  { name: "Theme 2", img: true, background: "/background/2.png" },
-  { name: "Theme 3", img: true, background: "/background/3.png" },
-  { name: "Theme 4", img: true, background: "/background/4.png" },
-  { name: "Theme 1", img: true, background: "/background/1.png" },
-  { name: "Theme 5", img: true, background: "/background/5.png" },
-  { name: "Theme 6", img: true, background: "/background/6.png" },
-  { name: "Theme 3", img: false, background: "blue" },
-  { name: "Theme 4", img: false, background: "green" },
-  { name: "Theme 5", img: false, background: "red" },
-  { name: "Theme 7", img: false, background: "gray" },
-  { name: "Theme 8", img: false, background: "cyan" },
+  {type:'gradient', name: "Theme 2", img: true,src:'/background/2.png', background: "url(/background/2.png)" },
+  {type:'gradient', name: "Theme 3", img: true,src:'/background/3.png', background: "url(/background/3.png)" },
+  {type:'gradient', name: "Theme 4", img: true,src:'/background/4.png', background: "url(/background/4.png)" },
+  {type:'gradient', name: "Theme 1", img: true,src:'/background/1.png', background: "url(/background/1.png)" },
+  {type:'gradient', name: "Theme 5", img: true,src:'/background/5.png', background: "url(/background/5.png)" },
+  {type:'gradient', name: "Theme 6", img: true,src:'/background/6.png', background: "url(/background/6.png)" },
+  {type:'color', name: "Theme 3", img: false, background: "blue" },
+  {type:'color', name: "Theme 4", img: false, background: "green" },
+  {type:'color', name: "Theme 5", img: false, background: "red" },
+  {type:'color', name: "Theme 7", img: false, background: "gray" },
+  {type:'color', name: "Theme 8", img: false, background: "cyan" },
 ];
 
 var themeColor= 'Theme 2';
@@ -23,9 +23,25 @@ export default function Theme(){
   const ratio_w_h=80;
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState('Theme 1');
-  const selectThemeFunction=(theme :string)=>{
+
+  const selectThemeFunction = (theme: string | { type: string, background: string }) => {
+    console.log(theme);
+    document.body.style.background = theme.background;
     setSelectedTheme(theme);
+
+    // if (typeof theme === 'string') {
+    //   document.body.style.backgroundColor = theme;
+    //   setSelectedTheme(theme);
+    // } else if (theme.type === 'color') {
+    //   document.body.style.backgroundColor = theme.background;
+    //   setSelectedTheme(theme.background);
+    // } else {
+    //   document.body.style.backgroundImage = `url(${theme.background})`;
+    //   setSelectedTheme(theme.background);
+    // }
   }
+
+
   themeColor= selectedTheme;
   return (
     <div className="">
@@ -36,9 +52,9 @@ export default function Theme(){
           <h2 className="font-bold mb-4 text-white">Themes</h2>
           <ul className="flex flex-row flex-wrap gap-3">
             {themes.map((theme, index) => (
-            <li key={index} className="mb-2 cursor-pointer" onClick={(e) => { e.stopPropagation(); selectThemeFunction(theme.name); }}>         {theme.img ? (
+            <li key={index} className="mb-2 cursor-pointer" onClick={(e) => { e.stopPropagation(); selectThemeFunction(theme); }}>         {theme.img ? (
                   <Image
-                    src={theme.background}
+                    src={theme.src}
                     alt={theme.name}
                     width={ratio_w_h}
                     height={ratio_w_h}

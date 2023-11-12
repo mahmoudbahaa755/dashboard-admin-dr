@@ -1,25 +1,36 @@
+'use client';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
-export  default async function loginUser(username:string, password:string) {
-  try {
-    const response = await axios.post('https://endo-api.eductor.org/auth/login/dashboard', {
-      username: username,
-      password: password,
-    });
+export default function LoginAPI(email: string, password: string) {
+  const router = useRouter();
 
-    if (response.status === 200) {
-      const userData = response.data.data; 
+  const loginUser = async (email: string, password: string) => {
+    try {
+      const response = await axios.post('https://endo-api.eductor.org/auth/login/dashboard', {
+        email: email,
+        password: password,
+      });
 
-      console.log(userData);
+      if (response.status === 200) {
+        const userData = response.data.data; 
 
-      
-      return userData;
-    } else {
-      console.error('Login failed:', response.data.message);
-      return null;
+        console.log(userData);
+
+        // Redirect to home page
+        router.push('./');
+      } else {
+        console.error('Login failed:', response.data.message);
+        // Show error message
+        alert('Login failed: ' + response.data.message);
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      // Show error message
+      alert('Login error: ' + error);
     }
-  } catch (error) {
-    console.error('An error occurred:', error);
-    return null;
-  }
+  };
+  const x=loginUser(email,password)
+  return x;
+  // ...
 }

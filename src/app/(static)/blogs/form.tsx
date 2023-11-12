@@ -52,17 +52,7 @@ export default function Form({ hasBorderRadius = false }: FormProps) {
                                 <input className={inputClass} id={`input-${form.label}`} type="text" placeholder={form.placeholder} />
                             </div>
                         ))}
-                        <div className="mb-4">
-                            <label className="block text-gray-700 font-bold mb-2" htmlFor="user-checkbox1">
-                                I Agree Terms & Conditions
-                            </label>
-                            <div className="flex items-center">
-                                <input className="mr-2 leading-tight" type="checkbox" id="user-checkbox1" checked />
-                                <label className="text-sm" htmlFor="user-checkbox1">
-                                    I Agree Terms & Conditions
-                                </label>
-                            </div>
-                        </div>
+                  
                         <div className="flex flex-col sm:flex-row items-center justify-between">
                             <button
                                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mb-4 sm:mb-0"
@@ -70,9 +60,7 @@ export default function Form({ hasBorderRadius = false }: FormProps) {
                             >
                                 <i className="icon-lock"></i> Register
                             </button>
-                            <div className="text-sm text-gray-600 mt-4 sm:mt-0">
-                                Already have an account? <a href="#" className="text-blue-500 hover:text-blue-700">Sign in</a>
-                            </div>
+                        
                         </div>
                     </form>
                 </div>
