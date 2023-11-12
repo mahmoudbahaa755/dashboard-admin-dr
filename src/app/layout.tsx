@@ -22,13 +22,13 @@ export default function RootLayout({ children,
 
   return (
     <html lang="en">
-      <body className={`text-white bg-fixed bg-bg2 pt-2 rounded-md`}>
+      <body className={`text-white bg-fixed bg-bg2 rounded-md`}>
         {/* <ReduxProvider> */}
 
         <div className='flex flex-col justify-between h-screen'>
-          <div className='flex flex-row gap-6 '>
+          <div className='flex flex-row gap-0 '>
             <NavToggleProvider>
-              <div>
+              <div className='bg-inner'>
                 {includeNavbar && <Navbar />}
               </div>
               <div className='w-screen'>
