@@ -6,11 +6,13 @@ import Link from "next/link";
 export default function Tables(){
     return(
         <div className='container '>
-            <button>
-                <Link href='./blogs'>
-                add blog
-                </Link>
-                </button>
+           <div className='flex justify-end '>
+  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <Link  href='./blogs'>
+    Add Blog
+</Link>
+  </button>
+            </div>
             {/* <AddData /> */}
              {/* <HoverTable  title='Basic Table' /> */}
              <BlogsTable />
