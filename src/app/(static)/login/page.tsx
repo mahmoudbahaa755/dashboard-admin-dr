@@ -3,8 +3,8 @@
 import Logo from "@/elements/Logo";
 import LoginAPI from './loginUser';
 import React, { ReactNode } from 'react';
-import { useDispatch } from 'react-redux';
-import { logIn,logOut } from '@/Redux/slices/auth-slice';
+// import { useDispatch } from 'react-redux';
+// import { logIn,logOut } from '@/Redux/slices/auth-slice';
 interface ButtonProps {
     type: 'button' | 'submit' | 'reset';
     className?: string;
@@ -41,11 +41,11 @@ const InputField: React.FC<InputFieldProps> = ({ type, id, placeholder }) => (
 );
 function LoginPage (){
     const handleSignIn = () => {
-        const x= LoginAPI('admin@admin.com', 'admin'); // replace with the actual credentials
+        const x= LoginAPI('admin@admin.com', 'admin'); 
         console.log(x);
      };
 return (
-    <div className='bg-bg1 z-2 absolute w-screen h-screen top-0 left-0 absolute flex items-center justify-center'>
+    <div className='bg-bg1 z-2 w-screen h-screen top-0 left-0 absolute flex items-center justify-center'>
     <div className="w-full max-w-xs">
             <div className="w-full max-w-xs">
                 <div className="shadow-lg rounded-lg flex flex-col space-y-4 justify-center  px-8 py-6 mb-4">
