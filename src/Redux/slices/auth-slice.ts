@@ -17,25 +17,22 @@ const initialState ={
         isModerator:false
     } as AuthState,
 } as InitialState ;
-export const auth= createSlice({
-    name:'auth',
+export const auth = createSlice({
+    name: 'auth',
     initialState,
-    reducers:{
-        logOut:()=>{
-        return initialState;
+    reducers: {
+        logOut: () => {
+            return initialState;
         },
-        logIn: (action:PayloadAction<string>) =>{
-            return {
-                value:{
-                    isAuth:true,
-                    username:action.payload,
-                    isModerator:true
-                }
-            }
-
-        }
-    }
-})
+        logIn: (state:any, action: PayloadAction<string>) => {
+            state.value = {
+                isAuth: true,
+                username: action.payload,
+                isModerator: true,
+            };
+        },
+    },
+});
 
 export const {logIn, logOut}= auth.actions;
 export default auth.reducer;
