@@ -6,14 +6,14 @@ import Link from 'next/link'
 
 const LoginPage = () => {
     return (
-        <div className='bg-bg1 z-2  w-screen h-screen top-0 left-0 absolute flex items-center justify-center'>
+        <div className='bg-bg1 z-2   w-screen h-screen top-0 left-0 absolute flex items-center justify-center'>
     <div className="w-full max-w-xs">
-            <div className="w-full max-w-xs">
+            <div className="w-full bg-inner max-w-xs">
                 <div className="shadow-lg rounded-lg flex flex-col space-y-4 justify-center  px-8 py-6 mb-4">
                     <div className="">
                         <Logo width={70} classes='flex  justify-center ' height={70} />
                     </div>
-                    <div className="text-gray-800 text-xl text-center mb-4 font-bold">
+                    <div className="text-white text-xl text-center mb-4 font-bold">
                         Sign Up
                     </div>
                     <form>
@@ -25,7 +25,7 @@ const LoginPage = () => {
                              placeholder='user name'/>
                             {/* <label
                                 htmlFor="username"
-                                className="block text-gray-700 font-bold mb-2"
+                                className="block text-white font-bold mb-2"
                             >
                                 Username
                             </label>
@@ -34,7 +34,7 @@ const LoginPage = () => {
                                     type="text"
                                     id="username"
                                     placeholder="Enter Username"
-                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
                                 />
                             </div> */}
                         </div>
@@ -55,7 +55,7 @@ const LoginPage = () => {
                                 />
                                 <label
                                     htmlFor="remember-me"
-                                    className="ml-2 block text-gray-700 font-bold"
+                                    className="ml-2 block text-white font-bold"
                                 >
                                     Remember me
                                 </label>
@@ -71,7 +71,7 @@ const LoginPage = () => {
                             </button>
                         </div>
                         <div className="text-center mb-4">
-                            <span className="text-gray-700 font-bold">Or Sign up With</span>
+                            <span className="text-white font-bold">Or Sign up With</span>
                         </div>
                         <div className="flex justify-center">
                             <div className="mr-2">
@@ -95,7 +95,7 @@ const LoginPage = () => {
                         </div>
                     </form>
                 </div>
-                <p className="text-center text-gray-500 font-bolder text-l">
+                <p className="text-center text-white font-bolder text-l">
                     have an account?
                     <Link
                         href="/login"
