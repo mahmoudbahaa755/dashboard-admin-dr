@@ -34,16 +34,7 @@ export default function Theme() {
     document.body.style.background = theme.background;
     setSelectedTheme(theme);
 
-    // if (typeof theme === 'string') {
-    //   document.body.style.backgroundColor = theme;
-    //   setSelectedTheme(theme);
-    // } else if (theme.type === 'color') {
-    //   document.body.style.backgroundColor = theme.background;
-    //   setSelectedTheme(theme.background);
-    // } else {
-    //   document.body.style.backgroundImage = `url(${theme.background})`;
-    //   setSelectedTheme(theme.background);
-    // }
+ 
   }
 
 
@@ -53,7 +44,7 @@ export default function Theme() {
       {isSidebarOpen && (
         <div
           style={isSidebarOpen ? { display: 'block' } : { display: 'none' }}
-          className="bg-gray-800 w-48 p-2 absolute right-0 top-0 h-screen shadow-lg">
+          className="bg-gray-800 w-48 p-2 absolute right-0 top-0 h-fit shadow-lg">
           <h2 className="font-bold mb-4 text-white">Gradient Background</h2>
           <ul className="flex flex-row flex-wrap gap-3">
             {themes.map((theme, index) => (
