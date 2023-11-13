@@ -54,7 +54,7 @@ export default function Profile() {
   //     },
   // ];
   return (
-    <div className="w-80 rounded-lg shadow-lg overflow-hidden">
+    <div className="w-80 rounded-lg bg-inner shadow-lg overflow-hidden">
       <div className="px-6 py-4">
         <div className="relative">
           <Image

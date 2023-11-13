@@ -2,57 +2,27 @@
 
 import Logo from "@/elements/Logo";
 import LoginAPI from './loginUser';
-import React, { ReactNode,useState,useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 // import { useDispatch } from 'react-redux';
 // import { logIn,logOut } from '@/Redux/slices/auth-slice';
-interface ButtonProps {
-    type: 'button' | 'submit' | 'reset';
-    className?: string;
-    children: ReactNode;
-    ariaLabel?: string;
-}
-
-const Button: React.FC<ButtonProps> = ({ type, className, children, ariaLabel }) => (
-    <button
-        type={type}
-        className={`font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${className}`}
-        aria-label={ariaLabel}
-    >
-        {children}
-    </button>
-);
 
     
-interface InputFieldProps {
-    type: 'text' | 'password' | 'email' | 'number';
-    id: string;
-    placeholder?: string;
-}
 
-const InputField: React.FC<InputFieldProps> = ({ type, id, placeholder }) => (
-    <div className="relative">
-        <input
-            type={type}
-            id={id}
-            placeholder={placeholder}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
-        />
-    </div>
-);
 function LoginPage (){
     const [backgroundColor, setBackgroundColor] = useState('bg2');
-
+    const handleSignIn = (event:any) => {
+        event.preventDefault();
+        console.log(event);
+        const x= LoginAPI('admin@admin.com', 'admin'); 
+        console.log(x)
+      };
     useEffect(() => {
         if (typeof window !== 'undefined') {
           const bodyBackgroundColor = window.getComputedStyle(document.body).backgroundColor;
           setBackgroundColor(bodyBackgroundColor);
         }
       }, []);
-    const handleSignIn = () => {
-        const x= LoginAPI('admin@admin.com', 'admin'); 
-        console.log(x);
-     };
-     console.log(backgroundColor);
+
 
 return (
     
@@ -71,23 +41,32 @@ return (
                         Sign In
                     </div>
                     <form onSubmit={handleSignIn}>
-                        <div className="mb-4">
-                            <label htmlFor="username" className="block text-white font-bold mb-2">Email</label>
-                            <InputField type="text" id="username" placeholder="Enter Username" />
-                        </div>
-                        <div className="mb-6">
-                            <label htmlFor="password" className="block text-white font-bold mb-2">Password</label>
-                            <InputField type="password" id="password" placeholder="Enter Password" />
-                        </div>
-                    
-                        <div className="mb-6 flex justify-center">
-                            <Button type="submit" 
-                            // onClick={handleSignIn}
-                             className="bg-blue-500 hover:bg-blue-700 text-white">Sign In</Button>
-                        </div>
-                   
-                       
-                    </form>
+      <div className="mb-4">
+        <label htmlFor="email" className="block text-white font-bold mb-2">Email</label>
+        <input
+            type="text" id="email" placeholder="Enter email"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+        />
+      </div>
+      <div className="mb-6">
+        <label htmlFor="password" className="block text-white font-bold mb-2">Password</label>
+        <input
+            type="password" id="password" 
+            placeholder="Enter Password" 
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+        />
+      
+      </div>
+      <div className="mb-6 flex justify-center">
+      <button
+        type='submit'
+        className={`font-bold py-2 px-4 rounded focus:outline-none bg-blue-500 hover:bg-blue-700 text-white focus:shadow-outline`}
+      
+    >
+        Sign in
+    </button>
+      </div>
+    </form>
                 </div>
               
             </div>
