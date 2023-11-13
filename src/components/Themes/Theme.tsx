@@ -44,7 +44,7 @@ export default function Theme() {
       {isSidebarOpen && (
         <div
           style={isSidebarOpen ? { display: 'block' } : { display: 'none' }}
-          className="bg-gray-800 w-48 p-2 absolute right-0 top-0 h-fit shadow-lg">
+          className="bg-gray-800 w-48 p-2 absolute right-0 top-0 h-screen shadow-lg">
           <h2 className="font-bold mb-4 text-white">Gradient Background</h2>
           <ul className="flex flex-row flex-wrap gap-3">
             {themes.map((theme, index) => (
