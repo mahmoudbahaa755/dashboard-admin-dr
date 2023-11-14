@@ -66,8 +66,8 @@ const Header = () => {
     }
   ]
   return (
-    <div className='flex  py-2 bg-inner flex-row  justify-between pr-4 px-2'>
-      <div className="flex flex-row gap-3">
+    <div className='flex  py-2 bg-inner flex-row align-center items-center justify-between pr-4 px-2'>
+      <div className="flex flex-row  gap-3">
         <div className= "cursor-pointer mt-1 " onClick={onToggleMenu}>
         ☰
         </div>

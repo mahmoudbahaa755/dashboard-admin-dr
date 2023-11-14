@@ -1,15 +1,28 @@
-
+'use client'
 import Logo from "@/elements/Logo";
 
 import Input from "@/elements/Input";
 import Link from 'next/link'
-
+import { useSelector } from "react-redux";
+import Footer from '@/components/Footer/Footer'
+import { useEffect } from 'react';
 const LoginPage = () => {
+
+    const theme = useSelector((state)=> state.themeReducer.value);
+    
+useEffect(() => {
+    const innerBG = document.getElementById('innerBG');
+    if (innerBG) {
+      innerBG.style.background = theme.background;
+    }
+  }, [theme]);
+  
+    
     return (
-        <div className='bg-bg1 z-2   w-screen h-screen top-0 left-0 absolute flex items-center justify-center'>
+        <div id="innerBG" className={` bg-${theme.name}  z-2   w-screen h-screen top-0 left-0 absolute flex flex-col items-center justify-center`}>
     <div className="w-full max-w-xs">
             <div className="w-full bg-inner max-w-xs">
-                <div className="shadow-lg rounded-lg flex flex-col space-y-4 justify-center  px-8 py-6 mb-4">
+                <div className="  rounded-lg flex flex-col space-y-4 justify-center  px-8 py-6 mb-4">
                     <div className="">
                         <Logo width={70} classes='flex  justify-center ' height={70} />
                     </div>
@@ -106,6 +119,7 @@ const LoginPage = () => {
                 </p>
             </div>
         </div>
+       
         </div>
    
     

@@ -1,7 +1,7 @@
 interface MenuItem {
     href: string;
     label: string;
-    badge?: string;
+  
     svg?: any;
   }
   
@@ -103,11 +103,7 @@ export const menuItems: MenuItem[] = [
       </svg>
     ),
   },
-  // {
-  //   href: "/calendar",
-  //   label: "Calendar",
-  //   badge: "New",
-  // },
+  
   {
     href: "/profile",
     label: "Profile",

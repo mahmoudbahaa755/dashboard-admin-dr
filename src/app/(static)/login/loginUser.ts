@@ -1,6 +1,5 @@
 'use client';
 
-import { useRouter } from 'next/router';
 
 export default async function LoginAPI(email: string, password: string) {
   try {
